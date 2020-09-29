@@ -1,6 +1,6 @@
-import cv2						# OpenCV library
+import cv2						          # OpenCV library
 import matplotlib.pyplot as plt	# Histogram
-import bisect					# Bisect for faster lookup
+import bisect					          # Bisect for faster lookup
 
 # Max-Lloyd Algorithm
 def quantize(left, right, threshold):
@@ -31,7 +31,7 @@ print('Gambar grayscale:')
 cv2.imshow(grayImg)
 
 # Count frequency of pixel value here
-pixelFreq = [0] * 256           # List yang menyimpan frekuensi kemunculan piksel dengan value tertentu
+pixelFreq = [0] * 256
 for r in range(320):
   for c in range(240):
     pixelFreq[grayImg[r][c]] += 1
@@ -49,7 +49,7 @@ plt.show()
 
 # Make quantization ranges
 ranges = list()  
-quantize(0, 256, 100)   
+quantize(0, 256, 100) # Change threshold value for different results   
 print('Banyak level kuantisasi:', len(ranges))
 
 # Make newImg same as grayImg but quantized non-uniformly
